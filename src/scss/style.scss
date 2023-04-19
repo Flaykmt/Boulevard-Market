@@ -1,0 +1,245 @@
+
+//Header
+.header{
+  background-color: #282828;
+  &__nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    &__link{
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      a{
+        color: #fff;
+        font-size: 20px;
+      }
+    }
+    &__icons{
+      display: flex;
+      gap: 25px;
+    }
+  }
+  &__content{
+    background-image: url(../assets/img/bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 38px;
+    h1{
+      font-family: ProstoOne;
+      color: #fff;
+      font-size: 100px;
+    }
+    a{
+      background-color: #fff;
+      color: #000;
+      display: flex;
+      gap: 11px;
+      padding: 14px;
+      border-radius: 10px;
+    }
+  }
+}
+
+//Burger Menu
+.burger__menu{
+  display: none;
+  background-color: #282828;
+  position: fixed;
+  padding: 20px;
+  width: 100%;
+  button{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 40px;
+    z-index: 5;
+  }
+  &-list{
+    position: absolute;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    right: 45px;
+    top: -150%;
+    background-color: #181818;
+    padding: 50px;
+    border-radius: 10px;
+    gap: 20px;
+    align-items: center;
+    z-index: 4;
+    opacity: 0;
+    transition: 600ms;
+    a{
+      color: #fff;
+    }
+    .btn{
+      color: #fff;
+      padding: 7px 17px;
+      margin-top: 20px;
+    }
+  }
+}
+.active-list{
+  opacity: 1;
+  top: 95%;
+}
+.menu {
+  --color: #fff;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  position: relative;
+  border: none;
+  background: none;
+  cursor: pointer;
+  -webkit-appearence: none;
+  -webkit-tap-highlight-color: transparent;
+  svg {
+      width: 64px;
+      height: 48px;
+      top: -6px;
+      left: -14px;
+      stroke: var(--color);
+      stroke-width: 4px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      display: block;
+      position: absolute;
+      path {
+          transition: stroke-dasharray var(--duration, .85s) var(--easing, ease) var(--delay, 0s), stroke-dashoffset var(--duration, .85s) var(--easing, ease) var(--delay, 0s);
+          stroke-dasharray: var(--array-1, 26px) var(--array-2, 100px);
+          stroke-dashoffset: var(--offset, 126px);
+          transform: translateZ(0);
+          &:nth-child(2) {
+              --duration: .7s;
+              --easing: ease-in;
+              --offset: 100px;
+              --array-2: 74px;
+          }
+          &:nth-child(3) {
+              --offset: 133px;
+              --array-2: 107px;
+          }
+      }
+  }
+  &.active {
+      svg {
+          path {
+              --offset: 57px;
+              &:nth-child(1),
+              &:nth-child(3) {
+                  --delay: .15s;
+                  --easing: cubic-bezier(.2, .4, .2, 1.1);
+              }
+              &:nth-child(2) {
+                  --duration: .4s;
+                  --offset: 2px;
+                  --array-1: 1px;
+              }
+              &:nth-child(3) {
+                  --offset: 58px;
+              }
+          }
+      }
+  }
+}
+
+//Main
+.descr{
+  color: #fff;
+  padding: 30px 0 80px;
+  padding: 0 15px;
+  &__card{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 50px;
+    p{
+      line-height: 27px;
+      font-size: 22px;
+      font-family: M4;
+    }
+  }
+  &__bigcard{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    p{
+      font-size: 20px;
+    }
+    .right{
+      text-align: right;
+    }
+  }
+}
+
+.cards__content{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 79px 0 55px;
+  &__card{
+    background-color: #fff;
+    text-align: center;
+    padding: 15px 0px;
+    width: 255px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 6px;
+    img{
+      display: block;
+      margin: auto;
+    }
+    h3{
+      font-size: 20px;
+    }
+    p{
+      font-family: M4;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    a{
+      background-color: #000;
+      color: #fff;
+      padding: 7px 57px;
+      margin: auto;
+    }
+  }
+}
+
+//Footer
+.footer{
+  background-color: #282828;
+  &__content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 15px;
+    &__list{
+      display: flex;
+      gap: 30px;
+      a{
+        color: #fff;
+        font-size: 20px;
+      }
+    }
+    &__icons{
+      display: flex;
+      gap: 30px;
+    }
+  }
+}
